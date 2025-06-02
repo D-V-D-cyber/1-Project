@@ -68,6 +68,26 @@
             <input type="text" id="telegram" placeholder="Telegram (опционально)">
             <button type="submit" class="cta-button">Отправить</button>
         </form>
+ <section>
+        <div id="map" style="height: 400px; max-width: 1200px; margin: 20px auto;"></div>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=99f659f9-9e0a-406f-a06a-4839412ea4ea" type="text/javascript"></script>
+    <script>
+        ymaps.ready(function () {
+             let myMap = new ymaps.Map("map", {
+                center: [55.7558, 37.6173], // Координаты центра (Москва)
+                zoom: 15
+            });
+
+            let myPlacemark = new ymaps.Placemark([55.7558, 37.6173], {
+                hintContent: 'Центр Реабилитации',
+                balloonContent: 'г. Москва, ул. Здоровья, д. 10'
+            });
+
+            myMap.geoObjects.add(myPlacemark);
+        });
+    </script>
+    </section>
+
         <p>📍 Адрес: г. Москва, ул. Здоровья, д. 10</p>
         <p>📞 Телефон: +7 (495) 123-45-67</p>
         <p>📧 Email: <a href="mailto:info@rehab-center.ru">info@rehab-center.ru</a></p>
